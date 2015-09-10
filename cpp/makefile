@@ -18,7 +18,7 @@ COREOBJDIR=$(COREDIR)/obj
 #CORECODE = $(COREDIR)/QueuedThreadPool.cpp $(COREDIR)/Other.cpp
 #DEPS = $(patsubst %,$(IDIR)/%,$(_DEPS))
 
-COREOBJ = $(COREOBJDIR)/QueuedThreadPool.o $(COREOBJDIR)/Other.o
+COREOBJ = $(COREOBJDIR)/QueuedThreadPool.o $(COREOBJDIR)/SimpleDisruptorQueue.o
 #OBJ = $(patsubst %,$(ODIR)/%,$(_OBJ))
 
 # $@ says to put the output of the compilation in the file named on the left side
@@ -31,7 +31,7 @@ COREOBJ = $(COREOBJDIR)/QueuedThreadPool.o $(COREOBJDIR)/Other.o
 
 coreobj:
 	$(CCC) $(COREDIR)/QueuedThreadPool.cpp -o $(COREOBJDIR)/QueuedThreadPool.o
-	$(CCC) $(COREDIR)/Other.cpp -o $(COREOBJDIR)/Other.o
+	$(CCC) $(COREDIR)/SimpleDisruptorQueue.cpp -o $(COREOBJDIR)/SimpleDisruptorQueue.o
 
 corelibmake: coreobj
 	ar rvs $(LDIR)/core.ar $(COREOBJ)

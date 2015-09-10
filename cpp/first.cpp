@@ -1,6 +1,11 @@
-#include <stdio.h>
+#include <iostream>
+#include "MarketData.hpp"
+using namespace std;
 
-public void int main(int argc, char const *argv[]) {
-  /* code */
+int main(int argc, char const *argv[]) 
+{
+  PriceQuantity price;
+  
+  cout << "G'day."; 
   return 0;
 }
