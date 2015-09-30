@@ -1,6 +1,11 @@
 #ifndef _SimpleDisruptorQueue_H_
 #define _SimpleDisruptorQueue_H_
 
+#include <memory>
+#include "CoreErrors.hpp"
+
+using namespace std;
+
 /*
   Ring buffer with a single creator, multiple enrichers and readers.
   Only a single thread/writer can create a new message.
@@ -12,13 +17,11 @@
 */
 template<class TMessage>
 class SimpleDisruptorQueue
-
 {
 public:
   // A function called on the Creator thread that copies non-enriched
   // elements from NewMessage to BufferSlot.
-  typedef CoreErrors::ErrorId (*fCreator)
-    (TMessage *pNewMessage, TMessage *pBufferSlot) CreateNewMessageFunction;
+  typedef CoreErrors::ErrorId (*fCreator) (TMessage *pNewMessage, TMessage *pBufferSlot);
 
   SimpleDisruptorQueue
   (
@@ -29,19 +32,32 @@ public:
 
   void RegisterEnricher(int id);
   void RegisterReader(int id);
-  ErrorId RegisterNewMessageCreator(CreateNewMessageFunction createNewMessageFunction);
+  CoreErrors::ErrorId RegisterNewMessageCreator(fCreator createNewMessageFunction);
 
-  ErrorId CreateNewMessage
+  CoreErrors::ErrorId Start(void); 
+
+  CoreErrors::ErrorId CreateNewMessage
   (
     TMessage *pMessage,
     long &id // out.
   );
 
 private:
-  TMessage mRingBuffer;
+  // Only support a single creator source at this point.
+  std::unique_ptr<fCreator> mCreateNewMessageFunction;
+  TMessage *mRingBuffer;
   long mRingSize;
   int mEnricherCount;
   int mReaderCount;
+  
+  long *mEnricherPosition;
+  long *mReaderPosition;
+  long mNextNewPosition;
+  
+  long GetLastConsumerPosition(void);
+  long GetLastEnricherPosition(void);
+  long GetLastReaderPosition(void);  
+  long GetLastPosition(int positions[], int length);
 };
 
 
