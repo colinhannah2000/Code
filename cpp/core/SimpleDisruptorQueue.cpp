@@ -4,14 +4,14 @@
 template<class TMessage>
 SimpleDisruptorQueue<TMessage>::SimpleDisruptorQueue
   (
-    int ringSize,
+    RingSizeType ringSize,
     int enricherCount,
     int readerCount
   ) :  mRingSize (ringSize), mEnricherCount(enricherCount), mReaderCount(readerCount)
   {
-    mRingBuffer = new TMessage[mRingSize];
-    mEnricherPosition = new long[mEnricherCount];
-    mReaderPosition = new long[mReaderCount];
+    mpRingBuffer = new std::unique_ptr<TMessage>(new TMessage[mRingSize]);
+    InitialisePositonArray(mpEnricherPosition, mEnricherCount);
+    InitialisePositonArray(mpReaderPosition, mReaderCount);
   }
 
 template<class TMessage>
@@ -45,7 +45,7 @@ template<class TMessage>
 CoreErrors::ErrorId SimpleDisruptorQueue<TMessage>::CreateNewMessage
   (
     TMessage *pMessage,
-    long &id // out.
+    RingSizeType &id // out.
   )
   {
     CoreErrors::ErrorId status = CoreErrors::SUCCESS; 
@@ -57,7 +57,7 @@ CoreErrors::ErrorId SimpleDisruptorQueue<TMessage>::CreateNewMessage
     {
       status = mCreateNewMessageFunction(
         pMessage, 
-        &(mRingBuffer[mNextNewPosition]));
+        &(mpRingBuffer[mNextNewPosition]));
         
       mNextNewPosition++;
     }
@@ -65,25 +65,25 @@ CoreErrors::ErrorId SimpleDisruptorQueue<TMessage>::CreateNewMessage
   }
   
 template<class TMessage>
-long SimpleDisruptorQueue<TMessage>::GetLastConsumerPosition(void)
+RingSizeType SimpleDisruptorQueue<TMessage>::GetLastConsumerPosition(void)
   {
     return min(GetLastEnricherPosition(), GetLastReaderPosition);
   }
   
 template<class TMessage>
-long SimpleDisruptorQueue<TMessage>::GetLastEnricherPosition(void)
+RingSizeType SimpleDisruptorQueue<TMessage>::GetLastEnricherPosition(void)
   {
-    return GetLastPosition(mEnricherPosition, mEnricherCount);
+    return GetLastPosition(mpEnricherPosition, mEnricherCount);
   }
   
 template<class TMessage>
-long SimpleDisruptorQueue<TMessage>::GetLastReaderPosition(void)
+RingSizeType SimpleDisruptorQueue<TMessage>::GetLastReaderPosition(void)
   {
-    return GetLastPosition(mReaderPosition, mReaderCount);
+    return GetLastPosition(mpReaderPosition, mReaderCount);
   }  
     
 template<class TMessage>
-long SimpleDisruptorQueue<TMessage>::GetLastPosition(int positions[], int length)
+RingSizeType SimpleDisruptorQueue<TMessage>::GetLastPosition(int positions[], int length)
   {
     int lowest = mNextNewPosition;
     for(int i=0;i<length;i++)
@@ -91,4 +91,40 @@ long SimpleDisruptorQueue<TMessage>::GetLastPosition(int positions[], int length
       lowest = lowest < positions[i] ? lowest : positions[i];
     }
     return lowest;
+  }
+  
+template<class TMessage>
+void SimpleDisruptorQueue<TMessage>::GetRingStatus(
+  RingSizeType &ringSize, 
+  RingSizeType pEnricherPosition[], 
+  RingSizeType pReaderPosition[], 
+  RingSizeType &newPosition)
+  {
+    ringSize = mRingSize; 
+    memcpy(pEnricherPosition, mpEnricherPosition, sizeof(RingSizeType)*mEnricherCount);
+    memcpy(pReaderPosition, mpReaderPosition, sizeof(RingSizeType)*mReaderCount);
+  }
+  
+template<class TMessage>
+void SimpleDisruptorQueue<TMessage>::InitialisePositonArray(
+  std::unique_ptr<RingSizeType> &pPositions, 
+  int size)
+  {
+    pPositions = std::unique_ptr<RingSizeType>(new RingSizeType[size]);
+    for(int i=0;i<size;i++)
+    {
+      pPositions[i] = mInvalidPosition;
+    }
+  }
+  
+template<class TMessage>
+void SimpleDisruptorQueue<TMessage>::InitialisePositonArray(
+  std::unique_ptr<RingSizeType> &pPositions, 
+  int size)
+  {
+    pPositions = std::unique_ptr<RingSizeType>(new RingSizeType[size]);
+    for(int i=0;i<size;i++)
+    {
+      pPositions[i] = mInvalidPosition;
+    }
   }

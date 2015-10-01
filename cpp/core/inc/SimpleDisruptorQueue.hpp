@@ -22,44 +22,54 @@ public:
   // A function called on the Creator thread that copies non-enriched
   // elements from NewMessage to BufferSlot.
   typedef CoreErrors::ErrorId (*fCreator) (TMessage *pNewMessage, TMessage *pBufferSlot);
+  typedef long long RingSizeType;
 
   SimpleDisruptorQueue
   (
-    int ringSize,
-    int enricherCount, // Number of writers that can enrich a message
-    int readerCount
+    RingSizeType ringSize, // Should be very large. Virtual Memory.
+    int enricherCount, // Number of writers that can enrich a message. All must enrich before read.
+    int readerCount // Number of readers must read a message before the message is destroyed.
   );
 
-  void RegisterEnricher(int id);
+  void RegisterEnricher(int id); // Each id must match an index into the set of enrichers.
   void RegisterReader(int id);
+  
   CoreErrors::ErrorId RegisterNewMessageCreator(fCreator createNewMessageFunction);
 
   CoreErrors::ErrorId Start(void); 
 
-  CoreErrors::ErrorId CreateNewMessage
-  (
-    TMessage *pMessage,
-    long &id // out.
-  );
+  CoreErrors::ErrorId CreateNewMessage(TMessage *pMessage, long &id);
+  
+  // Expose state for monitoring.
+  void GetRingSizes(
+    RingSizeType &ringSize, 
+    RingSizeType &enrichersSize, 
+    RingSizeType &readersSize, 
+    RingSizeType &newPosition);
+    
+  void GetRingStatus(
+    RingSizeType &ringSize, 
+    RingSizeType pEnricherPosition[], // Buffer the size of matching GetRingSizes.
+    RingSizeType pReaderPosition[], // as above.
+    RingSizeType &newPosition);
 
 private:
-  // Only support a single creator source at this point.
   std::unique_ptr<fCreator> mCreateNewMessageFunction;
-  TMessage *mRingBuffer;
-  long mRingSize;
+  std::unique_ptr<TMessage> mpRingBuffer;
+  RingSizeType mRingSize;
   int mEnricherCount;
   int mReaderCount;
   
-  long *mEnricherPosition;
-  long *mReaderPosition;
-  long mNextNewPosition;
+  const int mInvalidPosition = -1;
+  std::unique_ptr<RingSizeType> mpEnricherPosition;
+  std::unique_ptr<RingSizeType> mpReaderPosition;
+  RingSizeType mNextNewPosition;
   
-  long GetLastConsumerPosition(void);
-  long GetLastEnricherPosition(void);
-  long GetLastReaderPosition(void);  
-  long GetLastPosition(int positions[], int length);
+  RingSizeType GetLastConsumerPosition(void);
+  RingSizeType GetLastEnricherPosition(void);
+  RingSizeType GetLastReaderPosition(void);  
+  RingSizeType GetLastPosition(int positions[], int length);
+  void InitialisePositonArray(std::unique_ptr<RingSizeType> &pPositions, int size);
 };
-
-
 
 #endif // _SimpleDisruptorQueue_H_
