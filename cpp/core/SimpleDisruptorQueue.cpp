@@ -96,35 +96,39 @@ RingSizeType SimpleDisruptorQueue<TMessage>::GetLastPosition(int positions[], in
 template<class TMessage>
 void SimpleDisruptorQueue<TMessage>::GetRingStatus(
   RingSizeType &ringSize, 
-  RingSizeType pEnricherPosition[], 
-  RingSizeType pReaderPosition[], 
+  RingSizeType *pEnricherPosition, 
+  RingSizeType *pReaderPosition, 
   RingSizeType &newPosition)
   {
     ringSize = mRingSize; 
-    memcpy(pEnricherPosition, mpEnricherPosition, sizeof(RingSizeType)*mEnricherCount);
-    memcpy(pReaderPosition, mpReaderPosition, sizeof(RingSizeType)*mReaderCount);
+    // We don't care about races, these are approximations.
+    CopyPositonArray(mpEnricherPosition, pEnricherPosition, sizeof(RingSizeType*)*mEnricherCount);
+    CopyPositonArray(mpReaderPosition, pReaderPosition, sizeof(RingSizeType*)*mReaderCount);
+    newPosition = mNextNewPosition;
   }
   
 template<class TMessage>
 void SimpleDisruptorQueue<TMessage>::InitialisePositonArray(
-  std::unique_ptr<RingSizeType> &pPositions, 
+  std::unique_ptr<RingSizeType[]> &pPositions, 
   int size)
   {
-    pPositions = std::unique_ptr<RingSizeType>(new RingSizeType[size]);
+    pPositions = std::unique_ptr<RingSizeType[]>(new RingSizeType[size]{});
     for(int i=0;i<size;i++)
     {
       pPositions[i] = mInvalidPosition;
+    }
+  } 
+  
+ 
+template<class TMessage>
+void SimpleDisruptorQueue<TMessage>::CopyPositonArray(
+  std::unique_ptr<RingSizeType[]> &pSource,
+  RingSizeType *pTarget,  
+  int size)
+  {
+    for(int i=0;i<size;i++)
+    {
+      pTarget[i] = pSource[i];
     }
   }
   
-template<class TMessage>
-void SimpleDisruptorQueue<TMessage>::InitialisePositonArray(
-  std::unique_ptr<RingSizeType> &pPositions, 
-  int size)
-  {
-    pPositions = std::unique_ptr<RingSizeType>(new RingSizeType[size]);
-    for(int i=0;i<size;i++)
-    {
-      pPositions[i] = mInvalidPosition;
-    }
-  }

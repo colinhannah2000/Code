@@ -1,19 +1,20 @@
 #ifndef _SimpleDisruptorQueue_H_
 #define _SimpleDisruptorQueue_H_
 
+#include <string>
 #include <memory>
 #include "CoreErrors.hpp"
 
 using namespace std;
 
+  typedef long long RingSizeType;
 /*
   Ring buffer with a single creator, multiple enrichers and readers.
   Only a single thread/writer can create a new message.
   An enricher may only modify unique elements of TMessage.
   A fully enriched message must be read by all readers before it is destroyed.
 
-
-  TMessage should be a class of nested structs. One per constr
+  TMessage should be a class of nested structs. One per Enricher.
 */
 template<class TMessage>
 class SimpleDisruptorQueue
@@ -22,7 +23,7 @@ public:
   // A function called on the Creator thread that copies non-enriched
   // elements from NewMessage to BufferSlot.
   typedef CoreErrors::ErrorId (*fCreator) (TMessage *pNewMessage, TMessage *pBufferSlot);
-  typedef long long RingSizeType;
+
 
   SimpleDisruptorQueue
   (
@@ -38,7 +39,7 @@ public:
 
   CoreErrors::ErrorId Start(void); 
 
-  CoreErrors::ErrorId CreateNewMessage(TMessage *pMessage, long &id);
+  CoreErrors::ErrorId CreateNewMessage(TMessage *pMessage, RingSizeType &id);
   
   // Expose state for monitoring.
   void GetRingSizes(
@@ -60,16 +61,17 @@ private:
   int mEnricherCount;
   int mReaderCount;
   
-  const int mInvalidPosition = -1;
-  std::unique_ptr<RingSizeType> mpEnricherPosition;
-  std::unique_ptr<RingSizeType> mpReaderPosition;
+  const RingSizeType mInvalidPosition = -1;
+  std::unique_ptr<RingSizeType[]> mpEnricherPosition;
+  std::unique_ptr<RingSizeType[]> mpReaderPosition;
   RingSizeType mNextNewPosition;
   
   RingSizeType GetLastConsumerPosition(void);
   RingSizeType GetLastEnricherPosition(void);
   RingSizeType GetLastReaderPosition(void);  
   RingSizeType GetLastPosition(int positions[], int length);
-  void InitialisePositonArray(std::unique_ptr<RingSizeType> &pPositions, int size);
+  void InitialisePositonArray(std::unique_ptr<RingSizeType[]> &pPositions, int size);
+  void CopyPositonArray(std::unique_ptr<RingSizeType[]> &pSource, RingSizeType *pTarget, int size);
 };
 
 #endif // _SimpleDisruptorQueue_H_
