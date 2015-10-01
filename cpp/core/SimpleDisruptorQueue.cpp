@@ -104,6 +104,7 @@ void SimpleDisruptorQueue<TMessage>::GetRingStatus(
     // We don't care about races, these are approximations.
     CopyPositonArray(mpEnricherPosition, pEnricherPosition, sizeof(RingSizeType*)*mEnricherCount);
     CopyPositonArray(mpReaderPosition, pReaderPosition, sizeof(RingSizeType*)*mReaderCount);
+    //std::copy(mpReaderPosition, mpReaderPosition+mReaderCount, pReaderPosition);
     newPosition = mNextNewPosition;
   }
   
@@ -117,8 +118,7 @@ void SimpleDisruptorQueue<TMessage>::InitialisePositonArray(
     {
       pPositions[i] = mInvalidPosition;
     }
-  } 
-  
+  }   
  
 template<class TMessage>
 void SimpleDisruptorQueue<TMessage>::CopyPositonArray(

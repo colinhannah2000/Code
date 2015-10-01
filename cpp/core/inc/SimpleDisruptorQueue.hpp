@@ -3,6 +3,7 @@
 
 #include <string>
 #include <memory>
+#include <iterator>
 #include "CoreErrors.hpp"
 
 using namespace std;
