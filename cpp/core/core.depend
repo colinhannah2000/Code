@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1441482019 source:/home/colin/Code/cpp/core/QueuedThreadPool.cpp
+	"QueuedThreadPool.hpp"
+
+1441475703 /home/colin/Code/cpp/core/inc/QueuedThreadPool.hpp
+
