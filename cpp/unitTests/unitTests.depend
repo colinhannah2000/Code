@@ -1,0 +1,25 @@
+# depslib dependency file v1.0
+1444924761 source:/home/colin/Code/cpp/unitTests/main.cpp
+	<iostream>
+	"TestSimpleDisruptorQueue.cpp"
+
+1445515696 /home/colin/Code/cpp/unitTests/TestSimpleDisruptorQueue.cpp
+	<iostream>
+	"SimpleDisruptorQueue.hpp"
+	"QueuedThreadPool.hpp"
+
+1445515731 /home/colin/Code/cpp/core/inc/SimpleDisruptorQueue.hpp
+	<string>
+	<memory>
+	<iterator>
+	"CoreErrors.hpp"
+
+1443641551 /home/colin/Code/cpp/core/inc/CoreErrors.hpp
+
+1444928631 /home/colin/Code/cpp/core/inc/QueuedThreadPool.hpp
+
+1445515696 source:/home/colin/Code/cpp/unitTests/TestSimpleDisruptorQueue.cpp
+	<iostream>
+	"SimpleDisruptorQueue.hpp"
+	"QueuedThreadPool.hpp"
+

@@ -39,18 +39,19 @@ coreobj:
 
 COREOBJ = $(COREOBJDIR)/QueuedThreadPool.o $(COREOBJDIR)/SimpleDisruptorQueue.o
 
-corelibmake: coreobj
-	ar rvs $(LDIR)/core.ar $(COREOBJ)
+#corelibmake: coreobj
+#	ar rvs $(LDIR)/core.ar $(COREOBJ)
 
-unittestsobj:
+unittestsobj: coreobj
 	$(COMPILE) $(UNITTESTSDIR)/main.cpp -o $(UNITTESTSOBJDIR)/main.o
+	$(COMPILE) $(UNITTESTSDIR)/TestSimpleDisruptorQueue.cpp -o $(UNITTESTSOBJDIR)/TestSimpleDisruptorQueue.o
 
-UNITTESTSOBJ = $(UNITTESTSOBJDIR)/main.o
+UNITTESTSOBJ = $(UNITTESTSOBJDIR)/main.o $(UNITTESTSOBJDIR)/TestSimpleDisruptorQueue.o
 
 unittestsmake: unittestsobj
 	$(LINK) $(UNITTESTSOBJ) $(COREOBJ) -o $(TARGETDEBUGDIR)/$(UNITTESTSDIR) -lstdc++
 
-all: corelibmake unittestsmake
+all: unittestsmake
 
 	#	$(CC) $(CFLAGS) -c $(COREOBJ)
 

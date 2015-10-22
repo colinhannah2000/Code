@@ -23,9 +23,14 @@ class SimpleDisruptorQueue
 {
 public:
   // A function called on the Creator thread that copies non-enriched
-  // elements from NewMessage to BufferSlot.
-  typedef CoreErrors::ErrorId (*fCreator) (TMessage *pNewMessage, TMessage *pBufferSlot);
+  // elements from NewMessage to BufferSlot. Called on CreateNewMessage thread.
+  typedef CoreErrors::ErrorId (*FCREATOR) (TMessage *pNewMessage, TMessage *pBufferSlot);
 
+  // A registered function called on the ENRICHER'S THREAD when a message is enriched.
+  // Register an instance method to access the enricher's private data.
+  typedef CoreErrors::ErrorId (*FENRICHER) (TMessage *pBufferSlot);
+
+  typedef CoreErrors::ErrorId (*FREADER) (const TMessage *pBufferSlot);
 
   SimpleDisruptorQueue
   (
@@ -33,27 +38,47 @@ public:
     int enricherCount, // Number of writers that can enrich a message. All must enrich before read.
     int readerCount // Number of readers must read a message before the message is destroyed.
   )
+  :
+  mRingSize(ringSize),
+  mEnricherCount(enricherCount),
+  mReaderCount(readerCount),
+  mpRingBuffer(new TMessage[ringSize]),
+  mCreateNewMessageFunction(nullptr)
   {
-    mpRingBuffer = new std::unique_ptr<TMessage>(new TMessage[mRingSize]);
+    //mpRingBuffer = std::make_unique<TMessage[]>(new TMessage[mRingSize]);
     InitialisePositonArray(mpEnricherPosition, mEnricherCount);
     InitialisePositonArray(mpReaderPosition, mReaderCount);
   }
 
-  void RegisterEnricher(int id); // Each id must match an index into the set of enrichers.
-  void RegisterReader(int id);
+  // Each id must match an index into the set of enrichers.
+  CoreErrors::ErrorId RegisterEnricher(int id, FENRICHER fEnricher)
+  {
+    CoreErrors::ErrorId status = CoreErrors::SUCCESS;
+    if (id < mEnricherCount)
+    {
+        CoreErrors::ErrorId status = CoreErrors::DISRUPTER_ENRICHER_ID_INVALID;
+    }
 
-  CoreErrors::ErrorId RegisterNewMessageCreator(fCreator createNewMessageFunction)
+    if (m)
+  }
+
+  void RegisterReader(int id) {}
+
+  // Register a message creator that will populate the buffered message on a different thread.
+  CoreErrors::ErrorId RegisterNewMessageCreator(FCREATOR createNewMessageFunction)
   {
     CoreErrors::ErrorId status = CoreErrors::DISRUPTER_MESSAGE_CREATOR_ALREADY_REGISTERED;
 
-    if(mCreateNewMessageFunction == NULL)
+    if(mCreateNewMessageFunction == nullptr)
     {
-      mCreateNewMessageFunction = new std::unique_ptr<fCreator>(createNewMessageFunction);
+      mCreateNewMessageFunction = createNewMessageFunction;
       status = CoreErrors::SUCCESS;
     }
 
     return status;
   }
+
+  CoreErrors::ErrorId Enrich(int id)
 
   CoreErrors::ErrorId Start(void)
   {
@@ -113,11 +138,15 @@ public:
     }
 
 private:
-  std::unique_ptr<fCreator> mCreateNewMessageFunction;
+  //std::shared_ptr<FCREATOR> mCreateNewMessageFunction;
+  FCREATOR mCreateNewMessageFunction;
   std::unique_ptr<TMessage> mpRingBuffer;
   RingSizeType mRingSize;
-  int mEnricherCount;
-  int mReaderCount;
+  int mEnricherCount = 0;
+  int mReaderCount = 0;
+
+  std::unique_ptr<FENRICHER[]> mpEnrichers;
+  std::unique_ptr<FREADER[]> mpReaders;
 
   const RingSizeType mInvalidPosition = -1;
   std::unique_ptr<RingSizeType[]> mpEnricherPosition;
