@@ -1,0 +1,200 @@
+CBA	Commonwealth Bank of Australia	Financials	130,781,000,000	9.00
+WBC	Westpac Banking Corporation	Financials	100,771,000,000	6.94
+ANZ	Australia And New Zealand Banking Group Limited	Financials	75,383,500,000	5.19
+NAB	National Australia Bank Limited	Financials	75,228,800,000	5.18
+BHP	BHP Billiton Limited	Materials	72,905,400,000	5.02
+TLS	Telstra Corporation Limited	Telecommunication Services	64,918,200,000	4.47
+CSL	CSL Limited	Health Care	44,328,100,000	3.05
+WES	Wesfarmers Limited	Consumer Staples	43,972,400,000	3.03
+WOW	Woolworths Limited	Consumer Staples	30,616,900,000	2.11
+MQG	Macquarie Group Limited	Financials	27,905,200,000	1.92
+WPL	Woodside Petroleum Limited	Energy	24,700,800,000	1.70
+SCG	Scentre Group Stapled	Financials	21,776,400,000	1.50
+RIO	RIO Tinto Limited	Materials	21,549,000,000	1.48
+WFD	Westfield Corporation Stapled	Financials	21,300,400,000	1.47
+TCL	Transurban Group Stapled	Industrials	19,969,200,000	1.37
+QBE	QBE Insurance Group Limited	Financials	18,361,300,000	1.26
+AMP	AMP Limited	Financials	17,421,100,000	1.20
+BXB	Brambles Limited	Industrials	16,862,100,000	1.16
+SUN	Suncorp Group Limited	Financials	16,725,800,000	1.15
+AMC	Amcor Limited	Materials	15,762,300,000	1.08
+SYD	Sydney Airport Forus	Industrials	14,268,600,000	0.98
+IAG	Insurance Australia Group Limited	Financials	13,591,400,000	0.94
+RHC	Ramsay Health Care Limited	Health Care	12,945,300,000	0.89
+OSH	Oil Search Limited 10T	Energy	12,044,500,000	0.83
+VCX	Vicinity Centres Stapled		11,598,800,000	0.80
+AGL	AGL Energy Limited	Utilities	11,429,600,000	0.79
+RMD	Resmed Inc Cdi 10:1	Health Care	11,372,500,000	0.78
+AZJ	Aurizon Holdings Limited	Industrials	11,028,100,000	0.76
+GMG	Goodman Group Stapled	Financials	10,886,100,000	0.75
+APA	APA Group Stapled	Utilities	10,162,500,000	0.70
+SGP	Stockland Stapled	Financials	9,581,400,000	0.66
+ORG	Origin Energy Limited	Energy	9,445,960,000	0.65
+CIM	Cimic Group Limited	Industrials	9,193,760,000	0.63
+NCM	Newcrest Mining Limited	Materials	9,159,810,000	0.63
+TPM	TPG Telecom Limited	Telecommunication Services	9,028,080,000	0.62
+CTX	Caltex Australia Limited	Energy	8,769,600,000	0.60
+AIO	Asciano Limited	Industrials	8,729,700,000	0.60
+CWN	Crown Resorts Limited	Consumer Discretionary	8,667,890,000	0.60
+GPT	GPT Group Stapled	Financials	8,435,640,000	0.58
+SHL	Sonic Healthcare Limited	Health Care	8,063,660,000	0.55
+JHX	James Hardie Industries PLC Cdi 1:1	Materials	8,018,210,000	0.55
+S32	SOUTH32 Limited	Materials	7,959,030,000	0.55
+ASX	ASX Limited	Financials	7,943,210,000	0.55
+QANDA	Qantas Ordinary Fully Paid Deferred Settlement	Industrials	7,651,540,000	0.53
+DXS	Dexus Property Group Stapled	Financials	7,482,240,000	0.51
+LLC	Lend Lease Group Stapled	Financials	7,311,630,000	0.50
+CCL	Coca-cola Amatil Limited	Consumer Staples	7,124,300,000	0.49
+FMG	Fortescue Metals Group LTD	Materials	6,943,770,000	0.48
+MGR	Mirvac Group Stapled	Financials	6,680,650,000	0.46
+MPL	Medibank Private Limited	Financials	6,582,070,000	0.45
+IPL	Incitec Pivot Limited	Materials	6,506,640,000	0.45
+REA	REA Group LTD	Consumer Discretionary	6,473,780,000	0.45
+ORI	Orica Limited	Materials	6,184,600,000	0.43
+STO	Santos Limited	Energy	6,132,990,000	0.42
+CPU	Computershare Limited	Information Technology	6,082,230,000	0.42
+ALL	Aristocrat Leisure Limited	Consumer Discretionary	6,039,890,000	0.42
+SPK	Spark New Zealand Limited NZX	Telecommunication Services	5,693,800,000	0.39
+TTS	Tatts Group Limited	Consumer Discretionary	5,651,000,000	0.39
+DUE	Duet Group Forus	Utilities	5,547,710,000	0.38
+TWE	Treasury Wine Estates Limited	Consumer Staples	5,218,500,000	0.36
+AST	Ausnet Services Limited	Utilities	5,140,270,000	0.35
+COH	Cochlear Limited	Health Care	5,085,410,000	0.35
+BEN	Bendigo And Adelaide Bank Limited	Financials	4,914,370,000	0.34
+FBU	Fletcher Building Limited NZ	Materials	4,883,330,000	0.34
+BOQ	Bank of Queensland Limited	Financials	4,883,030,000	0.34
+HSO	Healthscope Limited	Health Care	4,763,260,000	0.33
+CGF	Challenger Limited	Financials	4,707,590,000	0.32
+SEK	Seek Limited	Industrials	4,646,470,000	0.32
+HVN	Harvey Norman Holdings Limited	Consumer Discretionary	4,445,440,000	0.31
+PTM	Platinum Asset Management Limited	Financials	4,405,960,000	0.30
+BLD	Boral Limited	Materials	4,164,160,000	0.29
+DMP	Domino’s Pizza Enterprises Limited	Consumer Discretionary	4,122,060,000	0.28
+FPH	Fisher & Paykel Healthcare Corporation Limited NZ	Health Care	4,111,890,000	0.28
+EGP	Echo Entertainment Group Limited	Consumer Discretionary	4,078,820,000	0.28
+TAH	Tabcorp Holdings Limited	Consumer Discretionary	3,824,720,000	0.26
+FLT	Flight Centre Travel Group Limited	Consumer Discretionary	3,822,540,000	0.26
+HGG	Henderson Group PLC Cdi 1:1	Financials	3,802,190,000	0.26
+BTT	BT Investment Management Limited	Financials	3,647,200,000	0.25
+MFG	Magellan Financial Group Limited	Financials	3,627,680,000	0.25
+AWC	Alumina Limited	Materials	3,484,610,000	0.24
+SKI	Spark Infrastructure Group Forus	Utilities	3,035,370,000	0.21
+ANN	Ansell Limited	Health Care	3,033,940,000	0.21
+IFL	Ioof Holdings Limited	Financials	2,851,270,000	0.20
+BKL	Blackmores Limited	Consumer Staples	2,813,370,000	0.19
+ABC	Adelaide Brighton Limited	Materials	2,796,700,000	0.19
+ORA	Orora Limited	Materials	2,787,440,000	0.19
+ILU	Iluka Resources Limited	Materials	2,696,430,000	0.19
+BSL	Bluescope Steel Limited	Materials	2,570,720,000	0.18
+IOF	Investa Office Fund Stapled	Financials	2,443,910,000	0.17
+QUB	Qube Holdings Limited	Industrials	2,418,110,000	0.17
+CAR	Carsales.com Limited	Information Technology	2,402,310,000	0.17
+SPO	Spotless Group Holdings Limited	Industrials	2,372,310,000	0.16
+DLX	Duluxgroup Limited	Materials	2,335,500,000	0.16
+REC	Recall Holdings Limited	Industrials	2,327,440,000	0.16
+SKC	Skycity Entertainment Group Limited NZ	Consumer Discretionary	2,253,520,000	0.16
+VED	Veda Group Limited	Industrials	2,234,560,000	0.15
+SRX	Sirtex Medical Limited	Health Care	2,191,680,000	0.15
+ALQ	Als Limited	Industrials	2,170,620,000	0.15
+FXJ	Fairfax Media Limited	Consumer Discretionary	2,154,220,000	0.15
+PMV	Premier Investments Limited	Consumer Discretionary	2,140,310,000	0.15
+NUF	Nufarm Limited	Materials	2,135,080,000	0.15
+MQA	Macquarie Atlas Roads Group Stapled	Industrials	2,106,160,000	0.14
+PPT	Perpetual Limited	Financials	2,101,900,000	0.14
+BWP	BWP Trust Ord Units	Financials	2,094,170,000	0.14
+SGM	Sims Metal Management Limited	Materials	2,085,430,000	0.14
+EVN	Evolution Mining Limited	Materials	1,981,840,000	0.14
+PRY	Primary Health Care Limited	Health Care	1,950,160,000	0.13
+MTU	M2 Group LTD	Telecommunication Services	1,939,180,000	0.13
+SUL	Super Retail Group Limited	Consumer Discretionary	1,934,310,000	0.13
+MYO	Myob Group Limited	Information Technology	1,917,020,000	0.13
+GNC	Graincorp Limited	Consumer Staples	1,901,790,000	0.13
+CHC	Charter Hall Group Forus	Financials	1,853,510,000	0.13
+GMA	Genworth Mortgage Insurance Australia Limited	Financials	1,846,000,000	0.13
+CMW	Cromwell Property Group Stapled	Financials	1,771,020,000	0.12
+REG	Regis Healthcare Limited	Health Care	1,763,030,000	0.12
+JBH	JB Hi-fi Limited	Consumer Discretionary	1,760,910,000	0.12
+GOZ	Growthpoint Properties Australia Stapled	Financials	1,753,430,000	0.12
+ABP	Abacus Property Group Stapled	Financials	1,750,140,000	0.12
+SKT	SKY Network Television Limited NZ	Consumer Discretionary	1,692,760,000	0.12
+NVT	Navitas Limited	Consumer Discretionary	1,642,420,000	0.11
+CQR	Charter Hall Retail Reit Unit	Financials	1,618,940,000	0.11
+CSR	CSR Limited	Materials	1,609,080,000	0.11
+AOG	Aveo Group Stapled	Financials	1,576,470,000	0.11
+VOC	Vocus Communications Limited	Telecommunication Services	1,573,950,000	0.11
+WOR	Worleyparsons Limited	Energy	1,566,010,000	0.11
+NST	Northern Star Resources LTD	Materials	1,542,080,000	0.11
+DOW	Downer Edi Limited	Industrials	1,540,350,000	0.11
+IRE	Iress Limited	Information Technology	1,518,720,000	0.10
+PGH	Pact Group Holdings LTD	Materials	1,499,290,000	0.10
+SCP	Shopping Centres Australasia Property Group Stapled	Financials	1,485,980,000	0.10
+SVW	Seven Group Holdings Limited	Industrials	1,461,380,000	0.10
+IGO	Independence Group NL	Materials	1,457,560,000	0.10
+TME	Trade Me Group Limited NZ	Consumer Discretionary	1,408,950,000	0.10
+NEC	Nine Entertainment Co. Holdings Limited	Consumer Discretionary	1,396,740,000	0.10
+EHE	Estia Health Limited	Health Care	1,389,950,000	0.10
+OZL	Oz Minerals Limited	Materials	1,383,820,000	0.10
+AHG	Automotive Holdings Group Limited	Consumer Discretionary	1,277,850,000	0.09
+GEM	G8 Education Limited	Consumer Discretionary	1,263,990,000	0.09
+MTS	Metcash Limited	Consumer Staples	1,248,640,000	0.09
+IVC	Invocare Limited	Consumer Discretionary	1,242,240,000	0.09
+TNE	Technology One Limited	Information Technology	1,208,370,000	0.08
+ARB	ARB Corporation Limited	Energy	1,191,480,000	0.08
+VRL	Village Roadshow Limited	Consumer Discretionary	1,175,250,000	0.08
+AAD	Ardent Leisure Group Stapled	Consumer Discretionary	1,151,980,000	0.08
+MSB	Mesoblast Limited	Health Care	1,150,140,000	0.08
+CTD	Corporate Travel Management Limited	Consumer Discretionary	1,126,590,000	0.08
+SDF	Steadfast Group Limited	Financials	1,120,880,000	0.08
+MTR	Mantra Group Limited	Consumer Discretionary	1,116,300,000	0.08
+WHC	Whitehaven Coal Limited	Energy	1,092,740,000	0.08
+SWM	Seven West Media Limited	Consumer Discretionary	1,088,320,000	0.07
+MMS	Mcmillan Shakespeare Limited	Industrials	1,070,010,000	0.07
+AHY	Asaleo Care Limited	Consumer Staples	1,046,540,000	0.07
+NWS	News Corporation. B Voting	Consumer Discretionary	1,023,360,000	0.07
+TPI	Transpacific Industries Group LTD	Industrials	1,021,290,000	0.07
+RRL	Regis Resources Limited	Materials	997,064,000	0.07
+SFR	Sandfire Resources NL	Materials	989,753,000	0.07
+FXL	Flexigroup Limited	Financials	986,349,000	0.07
+SAI	SAI Global Limited	Industrials	938,104,000	0.06
+SGH	Slater & Gordon Limited	Consumer Discretionary	912,289,000	0.06
+BAP	Burson Group Limited	Consumer Discretionary	905,104,000	0.06
+MYX	Mayne Pharma Group Limited	Health Care	891,329,000	0.06
+BGA	Bega Cheese Limited	Consumer Staples	885,097,000	0.06
+BRG	Breville Group Limited	Consumer Discretionary	884,648,000	0.06
+SIP	Sigma Pharmaceuticals Limited	Health Care	864,732,000	0.06
+BPT	Beach Energy Limited	Energy	840,356,000	0.06
+JHC	Japara Healthcare Limited	Health Care	836,488,000	0.06
+SXL	Southern Cross Media Group Limited	Consumer Discretionary	826,055,000	0.06
+MIN	Mineral Resources Limited	Industrials	789,011,000	0.05
+MYR	Myer Holdings Limited	Consumer Discretionary	784,321,000	0.05
+AAC	Australian Agricultural Company Limited	Consumer Staples	775,422,000	0.05
+ASB	Austal Limited	Industrials	771,819,000	0.05
+RFG	Retail Food Group Limited	Consumer Discretionary	742,831,000	0.05
+SYR	Syrah Resources Limited	Materials	723,650,000	0.05
+SHV	Select Harvests Limited	Consumer Staples	722,816,000	0.05
+CVO	Cover-more Group Limited	Financials	721,293,000	0.05
+GXL	Greencross Limited	Health Care	720,575,000	0.05
+PBG	Pacific Brands Limited	Consumer Discretionary	715,436,000	0.05
+LNG	Liquefied Natural Gas Limited	Energy	714,478,000	0.05
+GTY	Gateway Lifestyle Group Stapled	Financials	690,832,000	0.05
+MND	Monadelphous Group Limited	Industrials	673,054,000	0.05
+OFX	Ozforex Group Limited	Financials	660,000,000	0.05
+GUD	G.u.d. Holdings Limited	Consumer Discretionary	618,622,000	0.04
+ALU	Altium Limited	Information Technology	608,108,000	0.04
+TGR	Tassal Group Limited	Consumer Staples	606,479,000	0.04
+WSA	Western Areas Limited	Materials	585,897,000	0.04
+CDD	Cardno Limited	Industrials	564,845,000	0.04
+TSE	Transfield Services Limited	Industrials	540,643,000	0.04
+GWA	GWA Group Limited	Industrials	539,764,000	0.04
+NSR	National Storage Reit Stapled	Financials	531,786,000	0.04
+APN	APN News & Media Limited	Consumer Discretionary	509,375,000	0.04
+VRT	Virtus Health Limited	Health Care	499,600,000	0.03
+CCP	Credit Corp Group Limited	Industrials	485,183,000	0.03
+PDN	Paladin Energy LTD	Energy	479,407,000	0.03
+KAR	Karoon Gas Australia Limited	Energy	473,328,000	0.03
+TEN	TEN Network Holdings Limited	Consumer Discretionary	447,267,000	0.03
+DLS	Drillsearch Energy Limited	Energy	358,247,000	0.02
+AWE	AWE Limited	Energy	347,646,000	0.02
+CAB	Cabcharge Australia Limited	Industrials	325,163,000	0.02
+ARI	Arrium Limited	Materials	270,231,000	0.02
+DSH	Dick Smith Holdings Limited	Consumer Discretionary	192,757,000	0.01
