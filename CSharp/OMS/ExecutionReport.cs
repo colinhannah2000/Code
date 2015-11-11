@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace OMS
+namespace ETS.OMS
 {
-    public class ExecutionReport : Message, IExecutionReport
+    public struct ExecutionReport : IExecutionReport
     {
     }
 }

@@ -4,11 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace OMS
+namespace ETS.OMS
 {
     public class OmsFactory : IOmsFactory
     {
-        private long _nextId = 0;
+        private ulong _nextId = 0;
         public OmsFactory()
         {
 
@@ -22,7 +22,6 @@ namespace OMS
 
         public IExecutionReport CreateExectionReport()
         {
-
             ExecutionReport execution = CreateMessage<ExecutionReport>();
             return execution;
         }

@@ -1,12 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace OMS
+﻿namespace ETS.OMS
 {
-    public class Order : Message, IOrder
+    public struct Order : IOrder
     {
+        public ulong Id { get; set; }
+
+        public decimal Price { get;}
+
+        public Side Side { get; }
+
+        public ulong Volume { get; }
     }
 }

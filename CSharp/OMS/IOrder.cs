@@ -4,9 +4,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace OMS
+namespace ETS.OMS
 {
+    public enum Side { Buy, Sell };
+
     public interface IOrder : IMessage
     {
+        Side Side { get; }
+        decimal Price { get; }
+        ulong Volume { get; }
     }
 }

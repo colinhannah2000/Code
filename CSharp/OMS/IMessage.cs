@@ -4,10 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace OMS
+namespace ETS.OMS
 {
     public interface IMessage
     {
-        long Id { get; internal set; }
+        ulong Id { get; set; }
     }
 }

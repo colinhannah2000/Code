@@ -6,7 +6,8 @@ using System.Threading.Tasks;
 
 namespace ETS.OMS
 {
-    public interface IExecutionReport
+    public interface IMatcher
     {
+        List<ITradeReport> AddOrder(IOrder order);
     }
 }

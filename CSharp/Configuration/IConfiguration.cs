@@ -4,9 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ETS.OMS
+namespace ETS.Configuration
 {
-    public interface IExecutionReport
+    public interface IConfiguration
     {
+        void Load(string marketsFile);
     }
 }
