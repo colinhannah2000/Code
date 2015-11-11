@@ -12,6 +12,6 @@ namespace ETS.OMS
     {
         Side Side { get; }
         decimal Price { get; }
-        ulong Volume { get; }
+        ulong Volume { get; set; }
     }
 }

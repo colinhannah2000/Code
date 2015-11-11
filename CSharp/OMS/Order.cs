@@ -8,6 +8,6 @@
 
         public Side Side { get; }
 
-        public ulong Volume { get; }
+        public ulong Volume { get; set; }
     }
 }
