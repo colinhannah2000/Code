@@ -1,8 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace ETS.OMS
 {
@@ -32,6 +30,9 @@ namespace ETS.OMS
                     if (!match) break;
 
                     ulong tradedVolume;
+
+                    if (trades == null) trades = new List<ITradeReport>();
+
                     trades.Add(TradeTopOrder(oppositeBook, remainingVolume, order.Id, out tradedVolume));
                     remainingVolume -= tradedVolume;
                 }
@@ -71,7 +72,7 @@ namespace ETS.OMS
             // Top order traded out.
             if (matchedOrder.Volume <= volume)
             {
-                tradedVolume = volume - matchedOrder.Volume;
+                tradedVolume = matchedOrder.Volume;
                 matchedOrder.Volume = 0;
                 orders.RemoveAt(0);
             }

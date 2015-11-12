@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ETS.OMS
 {
-    public interface IExecutionReport
+    public interface IExecutionReport : IMessage
     {
     }
 }

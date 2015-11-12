@@ -8,5 +8,6 @@ namespace ETS.OMS
 {
     public struct ExecutionReport : IExecutionReport
     {
+        public ulong Id {get; set;}
     }
 }

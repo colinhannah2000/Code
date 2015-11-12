@@ -16,6 +16,8 @@ namespace ETS.OMS
 
     public class TradeReport : ITradeReport
     {
+        public ulong Id { get; set; }
+
         public ulong OrderId1 { get; set; }
         public ulong OrderId2 { get; set; }
         public ulong Volume { get; set; }

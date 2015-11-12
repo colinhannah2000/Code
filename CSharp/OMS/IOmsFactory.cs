@@ -8,7 +8,7 @@ namespace ETS.OMS
 {
     public interface IOmsFactory
     {
-        IOrder CreateOrder();
+        IOrder CreateOrder(decimal Price, Side side, ulong volume);
         IExecutionReport CreateExectionReport();
     }
 }

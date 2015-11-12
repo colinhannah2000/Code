@@ -4,9 +4,9 @@
     {
         public ulong Id { get; set; }
 
-        public decimal Price { get;}
+        public decimal Price { get; set; }
 
-        public Side Side { get; }
+        public Side Side { get; set; }
 
         public ulong Volume { get; set; }
     }

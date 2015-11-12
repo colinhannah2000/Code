@@ -8,6 +8,6 @@ namespace ETS.Configuration
 {
     public interface IConfiguration
     {
-        void Load(string marketsFile);
+        //void Load(string marketsFile);
     }
 }

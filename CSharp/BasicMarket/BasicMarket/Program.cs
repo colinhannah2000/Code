@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Autofac.Builder;
-using Autofac;
+﻿using Autofac;
 using ETS.Configuration;
 using System.Configuration;
 
@@ -15,14 +9,14 @@ namespace ETS.BasicMarket
         static void Main(string[] args)
         {
             ContainerBuilder builder = new ContainerBuilder();
-            builder.RegisterType<Configuration.Configuration>().As<IConfiguration>();
+            Configuration.Configuration.Build(builder, ConfigurationManager.AppSettings["Markets"]);
 
             IContainer container = builder.Build();
 
             using (var scope = container.BeginLifetimeScope())
             {
                 var configuration = scope.Resolve<IConfiguration>();
-                configuration.Load(ConfigurationManager.AppSettings["Markets"]);
+                //configuration.Load(marketsFileLocation);
             }
         }
     }

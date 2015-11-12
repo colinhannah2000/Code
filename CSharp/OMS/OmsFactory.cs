@@ -14,9 +14,12 @@ namespace ETS.OMS
 
         }
 
-        public IOrder CreateOrder()
+        public IOrder CreateOrder(decimal Price, Side side, ulong volume)
         {
             Order order = CreateMessage<Order>();
+            order.Price = Price;
+            order.Side = side;
+            order.Volume = volume;
             return order;
         }
 

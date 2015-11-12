@@ -18,12 +18,10 @@ namespace ETS.OMS
             public ulong Id { get; set; }
             public ulong Volume { get; set; }
         }
-
-
-        public void AddOrder(IOrder order)
+        
+        List<ITradeReport> IMatcher.AddOrder(IOrder order)
         {
             throw new NotImplementedException();
         }
-
     }
 }

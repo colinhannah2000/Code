@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ETS.OMS", "..\OMS\ETS.OMS.c
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ETS.Configuration", "..\Configuration\ETS.Configuration.csproj", "{E0E6888E-2348-4873-919C-26E38D4A51B5}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ETS.PerformanceTester", "..\ETS.PerformanceTester\ETS.PerformanceTester.csproj", "{4713E4D8-55FD-4B10-95CF-77D59D598F8E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{E0E6888E-2348-4873-919C-26E38D4A51B5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E0E6888E-2348-4873-919C-26E38D4A51B5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E0E6888E-2348-4873-919C-26E38D4A51B5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4713E4D8-55FD-4B10-95CF-77D59D598F8E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4713E4D8-55FD-4B10-95CF-77D59D598F8E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4713E4D8-55FD-4B10-95CF-77D59D598F8E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4713E4D8-55FD-4B10-95CF-77D59D598F8E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
