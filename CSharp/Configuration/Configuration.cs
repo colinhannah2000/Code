@@ -3,20 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.IO;
-using Autofac;
 
 namespace ETS.Configuration
 {
     public class Configuration : IConfiguration
-    {
-        private static string MarketsFileLocation;
-
-        public static void Build(ContainerBuilder builder, string marketsFileLocation)
-        {
-            builder.RegisterType<Configuration>().As<IConfiguration>();
-            MarketsFileLocation = marketsFileLocation;
-        }
-
+    {        
         public class Market
         {
             public string Symbol { get; internal set; }
@@ -26,9 +17,9 @@ namespace ETS.Configuration
             public decimal Weight { get; internal set; }
         }
 
-        public Configuration()
+        public Configuration(string marketsFileLocation)
         {
-            Load(MarketsFileLocation);
+            Load(marketsFileLocation);
         }
 
         public Dictionary<string, Market> Markets { get; private set; }

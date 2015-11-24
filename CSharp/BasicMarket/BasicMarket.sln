@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ETS.Configuration", "..\Con
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ETS.PerformanceTester", "..\ETS.PerformanceTester\ETS.PerformanceTester.csproj", "{4713E4D8-55FD-4B10-95CF-77D59D598F8E}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnitTests", "..\UnitTests\UnitTests.csproj", "{C1CB650C-313C-4422-9D2F-5576676ED860}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{4713E4D8-55FD-4B10-95CF-77D59D598F8E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4713E4D8-55FD-4B10-95CF-77D59D598F8E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4713E4D8-55FD-4B10-95CF-77D59D598F8E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C1CB650C-313C-4422-9D2F-5576676ED860}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C1CB650C-313C-4422-9D2F-5576676ED860}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C1CB650C-313C-4422-9D2F-5576676ED860}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C1CB650C-313C-4422-9D2F-5576676ED860}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -2,6 +2,8 @@
 using ETS.Configuration;
 using System.Configuration;
 using ETS.OMS;
+using System;
+using System.Collections.Generic;
 
 namespace ETS.PerformanceTester
 {
@@ -10,10 +12,11 @@ namespace ETS.PerformanceTester
         static void Main(string[] args)
         {
             ContainerBuilder builder = new ContainerBuilder();
-            Configuration.Configuration.Build(builder, ConfigurationManager.AppSettings["Markets"]);
+
+            builder.Register(c => new Configuration.Configuration(ConfigurationManager.AppSettings["Markets"])).As<IConfiguration>();
 
             builder.RegisterType<SingleSimpleMatcher>().As<IMatcher>();
-            builder.RegisterType<OmsFactory>().As<IOmsFactory>();
+            builder.RegisterType<OmsFactory>().As<IOmsFactory>().SingleInstance();
 
             IContainer container = builder.Build();
 
@@ -31,6 +34,16 @@ namespace ETS.PerformanceTester
         {
             var trades1 = matcher.AddOrder(orders.CreateOrder(10,Side.Buy,100));
             var trades2 = matcher.AddOrder(orders.CreateOrder(10, Side.Sell, 100));
+
+            var tests = new List<Tuple<decimal, Side, ulong>>
+            {
+                new Tuple<decimal, Side, ulong>(10,Side.Buy,100),
+                new Tuple<decimal, Side, ulong>(10,Side.Buy,100),
+                new Tuple<decimal, Side, ulong>(10,Side.Buy,100),
+                new Tuple<decimal, Side, ulong>(10,Side.Buy,100),
+                new Tuple<decimal, Side, ulong>(10,Side.Buy,100),
+                new Tuple<decimal, Side, ulong>(10,Side.Buy,100),
+            };
         }
     }
 }

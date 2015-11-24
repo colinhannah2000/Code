@@ -10,5 +10,6 @@ namespace ETS.OMS
     {
         IOrder CreateOrder(decimal Price, Side side, ulong volume);
         IExecutionReport CreateExectionReport();
+        //IOrder CreateOrder(double v1, Side buy, int v2);
     }
 }

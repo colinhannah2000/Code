@@ -2,13 +2,14 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 
 namespace ETS.OMS
 {
     public class OmsFactory : IOmsFactory
     {
-        private ulong _nextId = 0;
+        private long _nextId = 0;
         public OmsFactory()
         {
 
@@ -31,7 +32,7 @@ namespace ETS.OMS
 
         private TMessage CreateMessage<TMessage>() where TMessage : IMessage, new()
         {
-           return new TMessage() { Id = _nextId++};
+           return new TMessage() { Id = (ulong)Interlocked.Increment(ref _nextId)};
         }
     }
 }
