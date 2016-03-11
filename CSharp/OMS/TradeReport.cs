@@ -14,7 +14,7 @@ namespace ETS.OMS
         decimal Price { get; set; }
     }
 
-    public class TradeReport : ITradeReport
+    public struct TradeReport : ITradeReport
     {
         public ulong Id { get; set; }
 

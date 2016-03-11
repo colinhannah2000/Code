@@ -6,8 +6,7 @@ using System.Threading.Tasks;
 
 namespace ETS.Configuration
 {
-    public interface IConfiguration
+    interface IPerformanceTimer
     {
-        Dictionary<int, IMarket> Markets { get; }
     }
 }

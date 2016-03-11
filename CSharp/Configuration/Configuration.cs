@@ -7,8 +7,8 @@ using System.IO;
 namespace ETS.Configuration
 {
     public class Configuration : IConfiguration
-    {        
-        public class Market
+    {
+        private class Market : IMarket
         {
             public string Symbol { get; internal set; }
             public string Name { get; internal set; }
@@ -22,7 +22,7 @@ namespace ETS.Configuration
             Load(marketsFileLocation);
         }
 
-        public Dictionary<string, Market> Markets { get; private set; }
+        public Dictionary<int, IMarket> Markets { get; private set; }
 
         public void Load(string marketsFile)
         {
@@ -38,12 +38,13 @@ namespace ETS.Configuration
 
             var marketIndexes = Enumerable.Range(0, markets.Length);
 
-            Markets = new Dictionary<string, Market>();
+            int marketId = 0;
+            Markets = new Dictionary<int, IMarket>();
             allMarkets.Split(new char[] { '\n' }).ToList().ForEach(
                 market =>
                 {
                     var split = market.Split(new char[] { '\t' }).ToArray();
-                    Markets.Add(split[0], new Market()
+                    Markets.Add(marketId++, new Market()
                     {
                         Symbol = split[0],
                         Name = split[1],

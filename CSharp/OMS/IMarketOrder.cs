@@ -4,10 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ETS.Configuration
+namespace ETS.OMS
 {
-    public interface IConfiguration
+    interface IMarketOrder : IOrder
     {
-        Dictionary<int, IMarket> Markets { get; }
+        string MarketName { get; }
     }
 }

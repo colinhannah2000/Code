@@ -35,6 +35,8 @@ namespace ETS.OMS
         private CompareOrder _sellCompare;
         private CompareOrder _buyCompare;
 
+        public delegate SingleSimpleMatcher Factory();
+
         public SingleSimpleMatcher()
         {
             _sellCompare = (a, b) => a >= b;

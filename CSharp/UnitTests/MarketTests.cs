@@ -1,9 +1,6 @@
 ﻿using Autofac;
 using ETS.Configuration;
-using System.Configuration;
 using ETS.OMS;
-using System;
-using System.Collections.Generic;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace UnitTests
@@ -16,7 +13,7 @@ namespace UnitTests
             string location = @"C:\Users\colin\Code\Data\asx200Weights.txt";
             ContainerBuilder builder = new ContainerBuilder();
 
-            builder.Register(c => new Configuration(location)).As<IConfiguration>();
+            builder.Register(c => new Configuration(location)).As<IConfiguration>().SingleInstance();
 
             builder.RegisterType<SingleSimpleMatcher>().As<IMatcher>();
             builder.RegisterType<OmsFactory>().As<IOmsFactory>().SingleInstance();

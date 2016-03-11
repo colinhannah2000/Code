@@ -4,10 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ETS.Configuration
+namespace ETS.OMS
 {
-    public interface IConfiguration
+    public interface IOrderMatcherMap
     {
-        Dictionary<int, IMarket> Markets { get; }
+        void Build(int id, IMatcher matcher);
     }
 }
