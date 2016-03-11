@@ -14,7 +14,9 @@
 				<Option createDefFile="1" />
 				<Option createStaticLib="1" />
 				<Compiler>
+					<Add option="-std=c++0x" />
 					<Add option="-g" />
+					<Add directory="inc" />
 				</Compiler>
 			</Target>
 			<Target title="Release">
@@ -36,7 +38,11 @@
 			<Add option="-Wall" />
 			<Add option="-fexceptions" />
 		</Compiler>
-		<Unit filename="main.cpp" />
+		<Unit filename="QueuedThreadPool.cpp" />
+		<Unit filename="SimpleDisruptorQueue.cpp" />
+		<Unit filename="inc/CoreErrors.hpp" />
+		<Unit filename="inc/QueuedThreadPool.hpp" />
+		<Unit filename="inc/SimpleDisruptorQueue.hpp" />
 		<Extensions>
 			<code_completion />
 			<debugger />
