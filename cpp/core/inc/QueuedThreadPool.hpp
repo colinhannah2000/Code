@@ -1,5 +1,4 @@
-#ifndef _QUEUEDTHREADPOOL_H_
-#define _QUEUEDTHREADPOOL_H_
+#pragma once
 
 
 template<class TMessage>
@@ -19,4 +18,3 @@ class Ex2
             int One;
     };
 
-#endif //_QUEUEDTHREADPOOLH_

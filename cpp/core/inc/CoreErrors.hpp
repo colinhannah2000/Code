@@ -1,6 +1,4 @@
-#ifndef _CoreErrors_H_
-#define _CoreErrors_H_
-
+#pragma once
 
 class CoreErrors
 {
@@ -28,4 +26,3 @@ const CoreErrorMap[int,const string] =
   {}
 }
 */
-#endif // _CoreErrors_H_

@@ -2,30 +2,24 @@
 <CodeBlocks_project_file>
 	<FileVersion major="1" minor="6" />
 	<Project>
-		<Option title="core" />
+		<Option title="HashTest" />
 		<Option pch_mode="2" />
 		<Option compiler="gcc" />
 		<Build>
 			<Target title="Debug">
-				<Option output="bin/Debug/libcore" prefix_auto="1" extension_auto="1" />
+				<Option output="bin/Debug/HashTest" prefix_auto="1" extension_auto="1" />
 				<Option object_output="obj/Debug/" />
-				<Option type="3" />
+				<Option type="1" />
 				<Option compiler="gcc" />
-				<Option createDefFile="1" />
-				<Option createStaticLib="1" />
 				<Compiler>
-					<Add option="-std=c++0x" />
 					<Add option="-g" />
-					<Add directory="inc" />
 				</Compiler>
 			</Target>
 			<Target title="Release">
-				<Option output="bin/Release/libcore" prefix_auto="1" extension_auto="1" />
+				<Option output="bin/Release/HashTest" prefix_auto="1" extension_auto="1" />
 				<Option object_output="obj/Release/" />
-				<Option type="3" />
+				<Option type="1" />
 				<Option compiler="gcc" />
-				<Option createDefFile="1" />
-				<Option createStaticLib="1" />
 				<Compiler>
 					<Add option="-O2" />
 				</Compiler>
@@ -38,11 +32,7 @@
 			<Add option="-Wall" />
 			<Add option="-fexceptions" />
 		</Compiler>
-		<Unit filename="QueuedThreadPool.cpp" />
-		<Unit filename="SimpleDisruptorQueue.cpp" />
-		<Unit filename="inc/CoreErrors.hpp" />
-		<Unit filename="inc/QueuedThreadPool.hpp" />
-		<Unit filename="inc/SimpleDisruptorQueue.hpp" />
+		<Unit filename="main.cpp" />
 		<Extensions>
 			<code_completion />
 			<debugger />

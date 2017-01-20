@@ -1,0 +1,12 @@
+# depslib dependency file v1.0
+1483332257 source:/home/colin/Code/cpp/HashTest/main.cpp
+	<iostream>
+	"IHashTable.h"
+	"SimpleHash.h"
+
+1483334117 /home/colin/Code/cpp/HashTest/include/IHashTable.h
+
+1483334920 /home/colin/Code/cpp/HashTest/include/SimpleHash.h
+	<array>
+	<IHashTable.h>
+

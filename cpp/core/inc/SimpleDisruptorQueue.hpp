@@ -1,5 +1,4 @@
-#ifndef _SimpleDisruptorQueue_H_
-#define _SimpleDisruptorQueue_H_
+#pragma once
 
 #include <string>
 #include <memory>
@@ -59,7 +58,8 @@ public:
         CoreErrors::ErrorId status = CoreErrors::DISRUPTER_ENRICHER_ID_INVALID;
     }
 
-    if (m)
+    //if (m)
+    return CoreErrors::DISRUPTER_ENRICHER_ID_INVALID;
   }
 
   void RegisterReader(int id) {}
@@ -79,6 +79,9 @@ public:
   }
 
   CoreErrors::ErrorId Enrich(int id)
+  {
+    return CoreErrors::DISRUPTER_ENRICHER_ID_INVALID;
+  }
 
   CoreErrors::ErrorId Start(void)
   {
@@ -196,4 +199,3 @@ private:
   }
 };
 
-#endif // _SimpleDisruptorQueue_H_
